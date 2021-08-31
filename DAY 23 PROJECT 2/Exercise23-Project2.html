@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Event Listeners  - MiniProject2</title>
+        <meta charset = "utf-8">
+        <meta name = "viewport", content = "width= device-width, initial-scale = 1.0">
+    </head>
+    <body>
+        <script>
+            //Generating the keyboard code code using even listener. The image below.
+
+            //create 2 divs and append in document body
+            const div1 = document.createElement("div");
+            document.body.appendChild(div1)
+            const div2 = document.createElement("div")
+            document.body.appendChild(div2)
+            
+            
+            //create 2 spans in div1 
+            for (let i = 0; i < 2; i++) {
+            let span = document.createElement("span")
+            div1.appendChild(span);
+            }
+
+
+            //style document body
+            document.body.style.fontFamily = "cursive";
+            document.body.style.fontWeight = "bolder";
+            document.body.style.fontSize = "24px";
+            document.body.style.display = "flex";
+            document.body.style.flexDirection = "column"
+            document.body.style.justifyContent = "center";
+            document.body.style.alignItems = "center";
+
+
+
+            //style div1
+            div1.style.marginTop = "20px"
+            div1.style.borderStyle = "solid"
+            div1.style.padding = "7px"
+            div1.style.width = "300px"
+            div1.style.textAlign = "center";
+            div1.style.borderColor = "#c0c0c0";
+            div1.style.borderWidth = "1px";
+            div1.style.marginTop = "70px"
+            div1.style.marginBottom = "20px"
+            div1.style.height = "30px";
+            div1.style.backgroundColor = "e0e0e0";
+            div1.style.boxShadow = "0px 0px 10px #b1b1b1, -0px -0px 1px #ffffff"
+            
+
+            //get all span elements
+            const spans = document.querySelectorAll("span")
+           
+
+            //set initial content for div1 
+            spans[0].textContent = "Press any keyboard key";
+
+
+            //add event listeners to keypress 
+            document.body.addEventListener("keypress", (event) => {
+                spans[0].textContent = "You pressed"
+                spans[1].textContent = event.key;
+                spans[1].style.color = "#5bbc7a";
+                spans[1].style.marginLeft = "10px"
+            })
+
+
+           //style div2
+            div2.style.paddingTop = "15px"
+            div2.style.paddingBottom = "30px"
+            div2.style.width = "100px"
+            div2.style.textAlign = "center";
+            div2.style.height = "60px";
+            div2.style.fontSize = "50px";
+            div2.style.borderColor = "#c0c0c0";
+            div2.style.borderWidth = "1px";
+            div2.style.color = "#5bbc7a";
+            div2.style.backgroundColor = "e0e0e0";
+            div2.style.borderRadius = "5px"
+            div2.style.boxShadow = "0px 0px 6px #b1b1b1, -0px -0px 0px #ffffff"
+            document.body.addEventListener("keypress", (event) => {
+                div2.textContent = event.keyCode;
+            })
+
+            
+
+        </script>
+    </body>
+</html>
+
