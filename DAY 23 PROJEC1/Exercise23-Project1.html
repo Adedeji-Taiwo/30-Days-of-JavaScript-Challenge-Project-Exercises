@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>Event Listeners  - MiniProject1</title>
+        <meta charset = "utf-8">
+        <meta name = "viewport", content = "width= device-width, initial-scale = 1.0">
+    </head>
+    <body>
+        <h1>Number Generator</h1>
+        <h3>30 Days of JavaScript: DOM Day 3</h3>
+        <h4>Author: Asabeneh Yateyah</h4>
+
+        <p></p>
+        <input type = "text" id = "generate" placeholder = "Generate more numbers">
+        <button>Generate numbers</button><br>
+        <div></div>
+
+
+        <script>
+            //Generating numbers and marking evens, odds and prime numbers with three different colors. See the image below.
+
+            //Get all elements using queryselector
+            const h1 = document.querySelector("h1")
+            const h3 = document.querySelector("h3")
+            const h4 = document.querySelector("h4")
+            const input = document.querySelector("input")
+            const p = document.querySelector("p")
+            const button = document.querySelector("button")
+            const div = document.querySelector("div")
+
+            
+
+            
+
+            //style all elements as well as the document body
+            document.body.style.fontFamily = "cursive"
+            document.body.style.textAlign = "center";
+            document.body.style.display = "flex";
+            document.body.style.flexDirection = "column";
+            document.body.style.justifyContent = "center";
+            document.body.style.alignItems = "center";
+            h1.style.color = "#5bbc7a"
+            h1.style.marginBottom = "5px"
+            h3.style.margin = "2px"
+            h3.style.fontWeight = "lighter"
+            h4.style.marginTop = "0px"
+            h4.style.fontWeight = "lighter"
+            input.style.display = "inline-block"
+            input.style.width = "440px"
+            input.style.padding = "10px"
+            input.style.outlineColor = "#5bbc7a"
+            input.style.borderColor = "#5bbc7a"
+            input.style.marginBottom = "10px"
+            button.style.color = "#ffffff"
+            button.style.backgroundColor = "#5bbc7a"
+            button.style.width = "150px"
+            button.style.padding = "10px"
+            button.style.borderColor = "#5bbc7a"
+            button.style.display = "inline-block"
+            button.style.outlineColor = "#5bbc7a"
+            button.style.marginBottom = "20px"
+            div.style.width = "750px"
+            
+    
+            
+
+           
+            
+
+//pop a message when input is clicked using event listeners        
+input.addEventListener("click", () => {
+    p.textContent = "Enter number value in the input field to generate number"
+    p.style.color = "red"
+    p.style.marginRight = "30px";
+ })
+
+
+
+
+
+//pop a message when clicked is clicked using event listeners         
+button.addEventListener("click", () => {
+    p.textContent = "Input value must be a number"
+    p.style.color = "red"
+    p.style.marginRight = "230px";
+})
+
+
+           
+//generate numbers when button is clicked and style them
+ button.addEventListener("click", () => {
+    div.textContent = "";
+
+     let z = parseInt(input.value)
+     if (typeof z == "number") {
+        for (let i = 0; i < z; i++) {
+            
+            let text = document.createElement("span");
+            text.className = "title";
+            text.style.fontFamily = "cursive";
+            text.style.fontSize = "25px";
+            text.style.textAlign = "center";
+            text.style.display = "inline-block";
+            text.style.color = "#000000"
+            text.style.width = "76px";
+            text.style.height = "10px";
+            text.style.paddingBottom = "25px"
+            text.style.marginBottom = "4px"
+            text.style.marginRight = "4px"
+            text.textContent = i;
+            div.appendChild(text)
+        }
+        
+    }
+
+
+    
+   
+//get all spans using querrySelector
+const texts = document.querySelectorAll("span")
+
+
+
+//style backgrounds of numbers
+texts.forEach((title, i) => {
+    //zero is even and its less than one
+    if (i < 1) return title.style.backgroundColor = "#29c44d" 
+    
+    //one is isolated as odd
+    if (i === 1) return title.style.backgroundColor =  "#f8bf00" 
+
+    //two is naturally a prime number
+    if (i === 2) return title.style.backgroundColor =  "#ff5835"
+    
+    //we began discerning between prime and composite number for the rest of the numbers
+    
+    //even numbers isolated
+    if (i % 2 == 0) {return title.style.backgroundColor = "#29c44d" }
+    
+    //
+    else  { 
+            for (let j = 2; j < i; j++) {
+                if (i % j === 0) {  //isolate odds
+                    return  title.style.backgroundColor =  "#f8bf00"
+                 }
+                else { //rest serves up as prime numbers
+                    title.style.backgroundColor = "#ff5835"
+                }
+            }
+        }
+    })      
+})
+
+
+
+        </script>
+    </body>
+</html> 
