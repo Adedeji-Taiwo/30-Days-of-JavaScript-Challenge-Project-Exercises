@@ -1,0 +1,282 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container1, .container2 {
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    width: 80%;
+    padding: 0 15px;
+}
+
+
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.inputFields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-self:center;
+    width: 90%;
+}
+
+input {
+    width: 15%;    /*remember to set width to 25 in mobile*/
+    padding: 9px;
+    border: 1px solid #e0c3c0;
+    outline: none;
+    font-size: 16px;
+}
+
+input:not(#submit) { 
+    margin-right: 6px;
+}
+
+
+#submit {
+    color: #ffffff;
+    padding: 9px 20px;
+    font-size: 17px;
+    background-color: #d6b9b6;
+    border: none ;
+    outline:  none ;
+}
+
+.warn {
+    color: #ff0000;
+   font-weight: bold;
+}
+
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    margin-top: 10px;
+    width: 80%;
+}
+
+
+li {
+    display: grid;
+    grid-template-columns: 25% 20% 7% 33%;
+    grid-gap:5%;
+    margin-bottom: 15px;
+    background-color: #d6b9b6;
+    padding: 10px;
+    text-align: left;
+    width: 95%;
+}
+
+
+.nameDate {
+    display:grid;
+    grid-template-columns: 1fr;
+    row-gap: 5%;
+    text-transform: uppercase;
+}
+
+.date {
+    color: rgba(0, 0, 0, 0.6);
+    font-size:11px;
+}   
+
+
+.country, .score, .arithmetic {
+    text-transform: uppercase;
+    align-self: center;
+}
+
+
+.nameDate, .country, .score {
+    margin-right: 50px;
+}
+
+
+.arithmetic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    margin: 0 auto;
+}
+
+
+.circle, .delete, .add, .sub {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: bolder;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: pointer;
+}
+
+i.far.fa-trash-alt {
+    color: #ff0000;
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px)  {
+
+     .inputFields {
+        width: 90%;
+     }   
+
+    input {
+        width: 20%;
+        margin-bottom: 8px;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    li {
+        width: 95%;
+        padding: 6px;
+    }
+
+}
+
+
+@media only screen and (max-width: 580px)  {
+    body {
+        margin: 10px;
+        width: 95%;
+    }
+    .container1, .container2 {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .warn {
+        font-size: 11px;
+    }
+
+    .inputFields {
+        width: 100%;
+    }
+
+   input {
+        width: 18%;
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    #submit {
+        width: 30%;
+        font-size: 12px;
+        padding: 7px;
+    }
+
+
+    li {
+        width: 95%;
+        padding: 6px;
+    }
+
+    .nameDate {
+        font-size: small;
+        grid-gap: 7%;
+    }
+
+
+
+    .date {
+        font-size: 9px;
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    .country, .score, .arithmetic {
+        font-size: small;
+    }
+
+    
+.circle, .delete, .add, .sub {
+    width: 35px;
+    height: 35px;
+    font-size: 11px;
+    font-weight: bolder;
+   
+}
+
+}
+
+
+@media only screen and (width: 540px)  {
+    #submit {
+        padding: 10px;
+    }
+
+    ul {
+        position: relative;
+        left: 4px;
+    }
+
+}
+
+
+@media only screen and (max-width: 380px)  {
+
+    input:nth-child(4) {
+        width: 19.5%;
+    }
+
+    ul {
+        position: relative;
+        right: 10px;
+    }
+
+    li {
+        width: 93%;
+        grid-template-columns: 27% 20% 5% 30%;
+    }
+}
+
+@media only screen and (max-width: 361px)  {
+    ul {
+        width: 95%;
+        position: relative;
+        right: 16px;
+    }
+
+    li {
+        width: 93%;
+        grid-template-columns: 27% 17% 6% 32%;
+    }
+ 
+}
